@@ -1,0 +1,13 @@
+app = ""
+
+[build]
+  [build.image]
+  dockerfile = "Dockerfile"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls"]
