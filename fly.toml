@@ -1,8 +1,7 @@
 app = ""
 
 [build]
-  [build.image]
-  dockerfile = "Dockerfile"
+  image = "teddysun/xray:latest"
 
 [[services]]
   internal_port = 8080
@@ -11,3 +10,6 @@ app = ""
   [[services.ports]]
     port = 443
     handlers = ["tls"]
+
+[experimental]
+  cmd = ["xray", "-config=/etc/xray/config.json"]
